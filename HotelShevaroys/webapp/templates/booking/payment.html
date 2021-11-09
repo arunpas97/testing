@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+</div>
+<div class="elements ptb-80 text-center  ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title mb-50">
+                    <h2>Conform <span>Your Details</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-form-info text-center ptb-500 white_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="contact-form">
+                        <div class="contact-form-title mb-10">
+
+                        </div>
+ 
+                         <div class="contact-form-inner">
+
+                            
+                            <form method="POST" action=""> {% csrf_token %}
+                                <script
+                                    src="https://checkout.razorpay.com/v1/checkout.js"
+                                    data-key="rzp_live_J8nQ5tgrIyEcQI" // Enter the Key ID generated from the Dashboard
+                                    data-currency="INR"
+                                    data-amount={{am}}
+                                    data-order_id="{{no}}"
+                                    data-buttontext="Conform Pay"
+                                    data-name="Hotel Shevaroys"
+                                    data-description="{{rn}} Booking"
+                                    data-netbanking="true"
+                                    data-image="{% static 'images/logo/rp.png' %}"
+                                    data-prefill.name={{n}}
+                                    data-prefill.email={{e}}
+                                    data-prefill.contact={{p}}
+                                    data-theme.color="#F37254" 
+                                >
+                                            
+                                </script>
+                                <input type="hidden" custom="Hidden Element" name="hidden">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

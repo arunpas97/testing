@@ -1,0 +1,116 @@
+{% extends 'dashbase.html' %}
+{% load static %}
+{% load user_agents %}
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class=" align-self-center">
+            <h3 class="text-themecolor mb-0">Rooms</h3>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'superadmin' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Rooms</li>
+            </ol>
+        </div>
+    </div>
+ {% if request|is_pc %}
+    <div class="container-fluid" >
+   
+   <div class="row">
+                                {% for i in obj1 %}
+                 <div class="col-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{i.roomtype}}</h5>
+
+                                        <div class="media">
+                                            <img class="mr-3 img-fluid w-50" src="{{i.img.url}}" alt="">
+                                            
+                                            <div class="media-body">
+                                                <h5 class="mt-0">{{i.roomname}}</h5> 
+                                                <h5 class="mt-0">₹ {{i.price}}</h5> 
+                                                <h5 class="mt-0">Available Room : {{i.size}}</h5> 
+                                                 <br>                                                
+                                        <button type="submit"
+                                        
+                                        class="btn btn-primary"><a href="{% url 'editroom' i.id %}" style="color: white"> Edit Details</a></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                 {% endfor %}
+
+                
+
+</div>
+</div>
+{% else %}
+  <div class="container-fluid" >
+   
+   <div class="row">
+                                {% for i in obj1 %}
+                 <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{i.roomtype}}</h5>
+
+                                        <div class="media">
+                                                                                 
+                                          <img class="mr-3 img-fluid w-50" src="{{i.img.url}}" alt="">
+
+                                            <div class="media-body">
+                                                <h5 class="mt-0">{{i.roomname}}</h5> 
+                                                <h5 class="mt-0">₹ {{i.price}}</h5> 
+                                                <h5 class="mt-0">Available Room : {{i.size}}</h5>
+                                                 <br>                                                
+                                       <!--  <button type="submit"
+                                        
+                                        class="btn btn-primary"><a href="{% url 'editroom' i.id %}" style="color: white"> Edit Details</a></button> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                 {% endfor %}
+
+                
+
+</div>
+</div>
+{% endif %}
+</div>
+
+
+
+               
+
+
+                
+{% endblock %}
+
+{% for i in obj1 %}
+
+                 <div class="col-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{i.roomname}}</h5>
+
+                                        <div class="media">
+                                            <img class="mr-3 img-fluid w-25" src="" alt="Room image">
+                                            <div class="media-body">
+                                                <h5 class="mt-0">{{i.roomname}}</h5> 
+                                                <br>
+                                                 <button type="submit"
+                                        class="btn waves-effect waves-light btn-rounded btn-success"><a href="{% url 'editroom' i.id %}"> Edit</a></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                             {% endfor %}

@@ -1,0 +1,318 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'room/skin/blue-light-2.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'room/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'room/yellow.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'room/style.css' %}">
+
+            
+        </div> 
+        <div class="room-booking ptb-80 white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-80 text-center">
+                            <h2>Booking <span>rooms</span></h2>
+                           <!--  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                         <!-- <div class="booking-rooms-tab">
+                            <ul class="nav" role="tablist">
+                                <li  class="active"><a href="#booking" data-toggle="tab"><span class="tab-border">1</span><span>Room Info</span></a></li>
+                                <li><a href="#personal" data-toggle="tab"><span class="tab-border">2</span><span>Personal Info</span></a></li>
+                                 <li><a href="#payment" data-toggle="tab"><span class="tab-border">3</span><span>payment Info</span></a></li>
+                                <li><a href="#done" data-toggle="tab"><span class="tab-border">4</span><span>Reservation Done</span></a></li>
+                            </ul>
+                        </div> -->
+                        <br><br>
+                <div class="container">
+                    <div class="row">
+                        <!-- end columns -->
+                        
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 content-side">
+                            
+                            <div class="room-description">
+                                
+                                <div id="room-inner-carousel" class="carousel slide" data-ride="carousel">
+                                    
+                                    <div class="price-tag">
+                                        <p><span>₹ 3550 </span> +Taxes / per day</p>
+                                    </div><!-- end price-tag -->
+                                    
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#room-inner-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="1"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="2"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="3"></li>
+                                    </ol>
+                                    
+                                    <div class="carousel-inner">
+                                    
+                                        <div class="item active">
+                                            <img src="{% static 'images/room/4.jpg' %}" alt="Los Angeles">
+                                        </div><!-- end item -->
+                                        
+                                        <div class="item">
+                                            <img src="{% static 'images/room/4.jpg' %}" alt="Chicago">
+                                        </div><!-- end item -->
+                                        
+                                        <div class="item">
+                                            <img src="{% static 'images/room/4.jpg' %}" alt="Los Angeles">
+                                        </div><!-- end item -->
+                                        
+                                        <div class="item">
+                                            <img src="{% static 'images/room/4.jpg' %}" alt="Chicago">
+                                        </div><!-- end item -->
+                                        
+                                    </div><!-- end carousel-inner -->
+                                </div><!-- end room-inner-casrousel -->
+
+                                <div id="room-facilities">
+                                    <div class="row">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&emsp;&emsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&emsp;&emsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Hot Water"><img  src="{% static 'images/icon/8.png' %}"></a>&emsp;&emsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Room Amenities"><img  src="{% static 'images/icon/7.png' %}"></a>
+                                   </div><!-- end row -->
+                                </div><!-- end room-facilities -->
+                                
+                                <div id="description">
+                                    <div class="innerpage-heading">
+                                        <h1>DAHLIA ROOM</h1>
+                                        <span class="room-position">This room similar in space and style of the Rose Room is ideal for couples or small families. This room boasts of a real spacious sit out which is the best place for one to just relax and enjoy the holiday</span>
+                                    </div><!-- end innerpage-heading -->
+                                    
+                                    <p></p>
+                                    <a href="{% url 'bookRoom' room='DAHLIA_ROOM' %}" class="btn btn-yellow btn-lg btn-block">Book Now</a>
+                                </div><!-- end description -->
+                                
+                            </div><!-- end room-description -->
+                        </div><!-- end columns -->
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 side-bar left-side-bar">
+                        
+                            <div class="side-bar-block cart-highlight">
+                                <p>Standard Rates</p>
+                            </div><!-- end side-bar-block -->
+                            
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                    <div class="side-bar-block support-block">
+                                        <h3>For Reservations</h3>
+                                       <!--  <p class="query">If you have any question please don't hesitate to contact us</p> -->
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <span><i class="fa fa-phone"></i></span>
+                                                <div class="text">
+                                                    <p><a href="tel:+919944999569">+919944 99 9569</a></p>
+                                                    <p><a href="tel:+914281222288">+91 4281-222288</a></p>
+                                                    <p><a href="tel:+914281222383">+91 4281-222383</a></p>
+                                                    <p><a href="tel:+914281222384">+91 4281-222384</a></p><!-- 
+                                                    <p>+91 4281-222285</p>
+                                                    <p>+91 4281-222286</p> -->
+                                                </div><!-- end text -->
+                                            </li>
+                                            
+                                            <li>
+                                                <span><i class="fa fa-envelope"></i></span>
+                                                <div class="text">
+                                                    <p>reservations@</p>
+                                                    <p>hotelshevaroys.com</p>
+                                                </div><!-- end text -->
+                                            </li>
+                                        </ul>
+                                    </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->
+                                
+                                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                    <div class="side-bar-block special-offer">
+                                        <div id="circle">
+                                            <span>December</span>
+                                            <h3>Special Offer</h3>
+                                            <p> &emsp; </p>
+                                        </div>
+                                        <p id="offer-text"></p>
+                                        <a href="{% url 'bookRoom' room='DAHLIA_ROOM' %}" class="btn">Book Now</a>
+                                    </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->
+                                
+                            </div><!-- end row -->
+                            
+                        </div>
+                    </div><!-- end row -->
+                </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+        
+
+
+        <div class="our-room text-center ptb-80 white-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-75">
+                            <h2>Similar <span>Rooms</span></h2>
+                            <!-- <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="our-room-show">
+                    <div class="row">
+                        <div class="carousel-list">
+                            
+
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="#"><img src="{% static 'images/room/1.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="#">LUXURY VILLA</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR 6700 <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        <div class="room-book">
+                                            <a href="{% url 'deluxeroom' %}">Book now</a>
+                                        </div>
+                                        <br><br>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="#"><img src="{% static 'images/room/2.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="#">DELUXE VILLA</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR 5700 <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        <div class="room-book">
+                                            <a href="{% url 'deluxeroom' %}">Book now</a>
+                                        </div>
+                                        <br><br>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="#"><img src="{% static 'images/room/3.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="#">ORCHID ROOM</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR 3950 <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        <div class="room-book">
+                                            <a href="{% url 'orchidroom' %}">Book now</a>
+                                        </div>
+                                        <br><br>
+                                       <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="#"><img src="{% static 'images/room/5.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="#">ROSE ROOM</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR 3250 <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        <div class="room-book">
+                                            <a href="{% url 'roseroom' %}">Book now</a>
+                                        </div>
+                                        <br><br>
+                                      <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="#"><img src="{% static 'images/room/6.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="#">BOUGAINVILLA <br>ROOM</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR 2250 <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        <div class="room-book">
+                                            <a href="{% url 'bouvilla' %}">Book now</a>
+                                        </div>
+                                        <br><br>
+                                       <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="#"><img src="{% static 'images/room/7.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="#">STANDARD ROOM</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR 1550 <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        <div class="room-book">
+                                            <a href="{% url 'stdroom' %}">Book now</a>
+                                        </div>
+                                        <br><br>
+                                       <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %} 
+            <!--Welcome secton-->
+            <!-- <div class="welcome-section text-center ptb-110">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcurbs-inner">
+                                <div class="breadcrubs">
+                                    <h2>Contact us</h2>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+        <!--Header section end-->
+        <!-- search bar Start -->
+        <div class="search-bar animated slideOutUp">
+            <div class="table">
+                <div class="table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <div class="search-form-wrap">
+                                    <button class="close-search"><i class="mdi mdi-close"></i></button>
+                                    <form action="#">
+                                        <input type="text" placeholder="Search here..." value="Search here..."/>
+                                        <button class="search-button" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- search bar End -->
+        <!--Conatct form area Start-->
+        <div class="contact-form-info ptb-100 white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="contact-form">
+                            <div class="contact-form-title mb-25">
+                                <h2>send your message</h2>
+                            </div>
+                            <div class="contact-form-inner">
+                                <form action="https://formspree.io/mvozkkpr" method="POST">
+                                    <div class="form-field-top mb-20">
+                                        <div class="form-field-name">
+                                            <input type="text" name="name" placeholder="Your Name" required>
+                                        </div>
+                                        <div class="form-field-name">      
+                                            <input type="email" name="_replyto" placeholder="Your Email" required>
+                                        </div>                 
+                                    </div>
+                                    <div class="form-field-bottom">
+                                        <div class="textarea">
+                                            <div class="form-field-name">      
+                                                <textarea name="message" placeholder="Your messege" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div  class="form-field-name" >
+                                            <input class="btn waves-effect waves-light btn-info" style="height: 50px;" 
+                                        type="submit" value="Send">
+                                        </div>
+                                    </div>
+                                </form>
+                                                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="contact-info">
+                            <div class="contact-info-title mb-25"><h3>contact info</h3></div>
+                            <div class="contact-adresses">
+                                <div class="phone mb-15">
+                                    <p>
+                                        <span><i class="mdi mdi-phone"></i></span>
+                                        <span class="desc"><a href="tel:+919944999599">
+                                        +91-9944999599
+                                    </a></span>
+                                    </p>
+                                </div>
+                                <div class="mail mb-15">
+                                    <p>
+                                    <span><i class="mdi mdi-email"></i></span>
+                                    <span class="desc" style="text-transform: lowercase;"><a href="mailto:reservations@hotelshevaroys.com">reservations@hotelshevaroys.com</span>
+                                    </p>
+                                </div>
+                                <div class="addresses">
+                                    <p>
+                                        <span><i class="mdi mdi-map-marker"></i></span>
+                                        <span class="desc">Hospital Road, Salem, Tamil Nadu 636601.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="social-media mt-50">
+                               <h3 class="social-medai-title">social media</h3>
+                               <div class="social-media-list">
+                                    <a href="https://www.facebook.com/HotelShevaroysYercaud/"><i class="mdi mdi-facebook"></i></a>
+                                    <a href="https://www.instagram.com/hotel_shevaroys_/"><i class="mdi mdi-instagram"></i></a>
+                                    <a href="https://twitter.com/Hotel_Shevaroys"><i class="mdi mdi-twitter"></i></a>
+                                    <!-- <a href="#"><i class="mdi mdi-youtube-play"></i></a>
+                                    <a href="#"><i class="mdi mdi-pinterest"></i></a>
+                                    <a href="#"><i class="mdi mdi-instagram"></i></a> -->
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Conatct form area end-->
+        <!--Google Map Area Start-->
+        <div class="google-map-area">
+            <!--  Map Section -->
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d976.4388034465635!2d78.21206155610376!3d11.782278329763031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf5d27de03adf%3A0xc6b0db86e8cdda91!2sHotel%20Shevaroys!5e0!3m2!1sen!2sin!4v1573490172778!5m2!1sen!2sin" width="1347" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        <!--hotel team start-->
+        
+        <!--hotel team end-->    
+        </div>
+        <!--End of Google Map Area-->
+        <!--Footer start -->
+
+{% endblock %} 

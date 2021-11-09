@@ -1,0 +1,47 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %} 
+</div>
+<div class="contact-form-info ptb-100 white_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="contact-form">
+                    <div class="contact-form-title mb-25">
+                        <h2>share your feedback with us.</h2>
+                    </div>
+                    <div class="contact-form-inner">
+                        <form method="POST">{% csrf_token %}
+                            <div class="form-field-top mb-20">
+                                <div class="form-field-name">
+                                	<input name="name" type="text" value="{{request.user.profile.name}}" placeholder="Name" required="">
+                                </div>
+                                <div class="form-field-name">      
+                                    <input name="phone" type="text" maxlength="10" value="{{request.user.profile.mobile}}"placeholder="Mobile" required="">
+                                </div>
+                                  
+                                            
+                            </div>
+                            <div class="form-field-name">      
+                                <input name="email" type="email" value="{{request.user.profile.email}}"  placeholder="Email" required="">
+                            </div>
+                            <br>
+                            <div class="form-field-bottom">
+                                <div class="textarea">
+                                    <div class="form-field-name">      
+                                        <textarea name="feedback" placeholder="Your Feedback"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-field-name" >
+                                    <input class="btn waves-effect waves-light btn-info" style="height: 50px;" type="submit" value="Send">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

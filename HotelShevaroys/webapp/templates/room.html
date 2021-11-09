@@ -1,0 +1,110 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %} 
+            
+            <!-- <div class="welcome-section text-center ptb-110">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcurbs-inner">
+                                <div class="breadcrubs">
+                                    <h2>Book Your Room</h2>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!--Header section end-->
+
+        <!--Room Section Title start-->
+        <div class="elements ptb-80 text-center white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-50">
+                            <h2>Our <span>Rooms</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Room elements start-->
+            <div class="our-room-show room-section">
+                <div class="container">
+                    <div class="row">
+                       <div class="our-room-list owl-pagination">
+                            <div class="single-room-sapce">  
+                                {% for i in obj1 %}
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="single-room mb-80">
+                                        <div class="room-img">
+                                          
+                                             {% if request.user.is_authenticated %}
+                                                <!-- <a href="{% url 'bookroom' i.roomname i.price  %}"> -->
+                                                <a href="{% url 'room_view' i.roomname %}"></a>
+                                            {% else %}
+                                                <a href="{% url 'login' %}"></a>
+                                            {% endif %}
+                                                
+                                            <img src='{{i.img.url}}' alt="">
+                                           
+                                        </div>
+                                        <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3>                                                
+                                                {% if request.user.is_authenticated and i.size != 0 %}
+                                                    <!-- <a href="{% url 'bookroom' i.roomname i.price %}"> -->
+                                                    <a href="{% url 'room_view' i.roomname %}">
+                                                    {{i.roomname}}</a>
+                                                {% elif i.size == 0 %}
+                                                    <a href="#">{{i.roomname}}</a>
+                                                {% else %}
+                                                    <a href="{% url 'login' %}">{{i.roomname}}</a>
+                                                {% endif %}
+                                            </h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR {{i.price}} <span>+ Taxes /Per day</span></h5>
+                                        </div>
+                                         {% if request.user.is_authenticated and i.size != 0 %}
+                                            <div class="room-book">
+                                                <!-- <a href="{% url 'bookroom' i.roomname i.price %}">Book now</a> -->
+                                                <a href="{% url 'room_view' i.roomname %}">Book now</a>
+                                            </div>
+                                        {% elif i.size == 0 %}
+                                            <div class="room-book">
+                                                <a href="#">Rooms Full</a>
+                                            </div>
+                                        {% else %}
+                                            <div class="room-book">
+                                                <a href="{% url 'login' %}">Book now</a>
+                                            </div>
+                                        {% endif %}
+                                      
+                                       <br><br>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                
+                             </div>
+                </div>
+            </div>
+            <!--Room elements end-->
+            
+        </div>
+    </div>
+         </div>    
+        <!--skill Elementts end-->
+        <!--Room Section end-->
+        <!--hotel team start-->
+       
+        <!--hotel team end-->
+          <!--Footer start -->
+{% endblock %}

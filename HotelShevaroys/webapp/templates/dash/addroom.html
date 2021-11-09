@@ -1,0 +1,107 @@
+{% extends 'dashbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class=" align-self-center">
+            <h3 class="text-themecolor mb-0">Add Room</h3>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'superadmin' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Add New Room</li>
+            </ol>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div>
+                                <h4 class="card-title">Add A New Room </h4>
+                                <!--  <h6 class="card-subtitle"> All bootstrap element classies </h6> -->
+                            </div>
+                        </div>
+                        <form class="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Room Name</label>
+                                <div class="col-md-10">
+                                    <select class="custom-select col-12" name="roomname" type="text">
+                                    	<option selected="">Choose...</option>
+                                    	<option value="Standard Room">Standard Room</option>
+                                        <option value="Bougainvilla Room">Bougainvilla Room</option>
+                                        <option value="Rose Room">Rose Room</option>
+                                        <option value="Dahlia Room">Dahlia Room</option>
+                                        <option value="Orchid Room">Orchid Room</option>
+                                        <option value="King Orchid ">King Orchid </option>
+                                        <option value="Deluxe Villa">Deluxe Villa</option>
+                                        <option value="Luxury Villa">Luxury Villa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input"class="col-md-2 col-form-label">Room Type</label>
+                                <div class="col-md-10">
+                                    <select class="custom-select col-12" id="" name="roomtype" type="text" >
+                                        <option selected="">Choose...</option>
+                                        <option value="Room">Room</option>
+                                        <option value="Villa">Villa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Capacity</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="capacity" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Price</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="price" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                             <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Size</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="size" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="custom-file mb-3">
+                                <input type="file" name="img" class="custom-file-input" id="customFile" required>
+                                <label class="custom-file-label form-control" for="customFile">Room Image</label>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Slogan</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="dis" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Status</label>
+                                <div class="col-md-10">
+                                    <select class="custom-select col-12" name="status" id="inlineFormCustomSelect">
+                                        <option selected="">Choose...</option>
+                                        <option value="Available">Available</option>
+                                        <option value="Not Available">Not Available</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <center>
+                                <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success">Success</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "dashbase1.html"%}
+{% load static %}
+{% block content %} 
+<div class="page-wrapper">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">CheckOut Conform</h3>
+                        <br>
+                        <center><h4>Are You Sure, You want to CheckOut this Booking List?</h4></center>
+                        <br><br>
+                        <div class="table-responsive">
+                            <table id="col_render" class="table table-striped table-bordered display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>S.no</th>
+                                        <th>Name</th>
+                                        <th>Roomname</th>
+                                        <th>No of Rooms</th>
+                                        <th>Adult</th>
+                                        <th>Kids</th>
+                                        <th>Book In</th>
+                                        <th>Book Out</th>
+                                        <th>Mobile</th>
+                                        <th>Amount</th>
+                                        <th>Payment Status</th>
+                                        <th>Booking Status</th>
+                                        <th>CheckIn Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in c %}
+                                        {% if i.payment_status == True %}
+                                            <tr>
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.roomname}}</td>
+                                                <td>{{i.noofroom}}</td>
+                                                <td>{{i.adult}}</td>
+                                                <td>{{i.kids}}</td>
+                                                <td>{{i.bookIn}}</td>
+                                                <td>{{i.bookOut}}</td>
+                                                <td>{{i.phone}}</td>
+                                                <td>Rs. {{i.tamount}}</td>
+                                                <td style="color: green">Success</td>
+                                                <td style="color: green;">Conformed</td>
+                                                <td style="color: blue;"><b>CheckIn Time:</b> {{i.checkin_time}}</td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                                       
+                            </table>
+                            <br>
+                            <center>
+                                <a href="{% url 'checkout_conform1' id %}" class="btn waves-effect waves-light btn-info"> Yes, Checkout </a>&emsp;
+                                <a href="{% url 'bookinglist1' %}" class="btn waves-effect waves-light btn-danger"> No </a>
+                            </center>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

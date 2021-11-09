@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+</div>
+   <div class="elements ptb-80 text-center  ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-50">
+                            <h2><span>Register</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Conatct form area Start-->
+            <div class="contact-form-info text-center ptb-800  ">
+            <div style="padding-left: 300px;" class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="contact-form">
+                            <div class="contact-form-title mb-25">
+                                
+                            </div>
+                            <div class="contact-form-inner">
+                                <form id="contact-form" method="POST">{% csrf_token %}
+                                    <input type="name" name="name" placeholder="Name">
+                                    <input type="mobile" name="mobile" placeholder="Mobile">
+                                    <input type="email" name="email" placeholder="Email">
+                                    <input type="password" name="pass" placeholder="Password">
+                                    <button type="submit">SignUp</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Conatct form area end-->
+        </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "dashbase1.html"%}
+{% load static %}
+{% block content %} 
+
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class=" align-self-center">
+            <a href="{% url 'bookinglist1' %}" class="btn waves-effect waves-light btn-info">Back</a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        {% if obj %} 
+                            <h4 class="card-title" style="color:green;">Search Result Found ({{obj | length}})</h4>
+                            <br>     
+                            <div class="table-responsive">
+                                <table id="col_render" class="table table-striped table-bordered display"
+                                        style="width:100%">
+                                    <thead>
+                                        <tr style="text-align: center;">
+                                            <th>Booking ID</th>
+                                            <th>Name</th>
+                                            <th>Room Name</th>
+                                            <th>No of Rooms</th>
+                                            <th>Adult</th>
+                                            <th>Kids</th>
+                                            <th>Book In</th>
+                                            <th>Book Out</th>
+                                            <th>Mobile</th>
+                                            <th>Amount</th>
+                                            <th>Payment ID</th>
+                                            <th>Payment Status</th>
+                                            <th>Booking Status</th>
+                                            <th>Check In</th>
+                                            <th>Check Out</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in obj %}
+                                            <tr style="text-align: center;">
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.roomname}}</td>
+                                                <td>{{i.noofroom}}</td>
+                                                <td>{{i.adult}}</td>
+                                                <td>{{i.kids}}</td>
+                                                <td>{{i.bookIn}}</td>
+                                                <td>{{i.bookOut}}</td>
+                                                <td>{{i.phone}}</td>
+                                                <td>Rs. {{i.tamount}}</td>
+                                                <td>{{i.razorpay_payment_id}}</td>
+                                                <td style="color: green">Success</td>
+                                                <td style="color: green;">Conformed</td>
+                                                {% if i.checkin == False %}
+                                                    <td style="text-align: center;"><a href="{% url 'checkin_view' i.id %}"><img src="{% static 'images/icon/check.png' %}" height="30px" width="30px"></a></td>
+                                                {% else %}
+                                                    <td style="color: blue;text-align: center;"><b>CheckIn Time:</b> {{i.checkin_time}}</td>
+                                                {% endif %}
+                                                {% if i.checkin == True %}
+                                                    {% if i.checkout == False %}
+                                                        <td style="text-align:center;"><a href="{% url 'checkout_view' i.id %}"><img src="{% static 'images/icon/check.png' %}" height="30px" width="30px"></a></td>
+                                                    {% else %}
+                                                        <td style="color: blue;text-align: center;"><b>CheckOut Time:</b> {{i.checkout_time}}</td>
+                                                    {% endif %}
+                                                {% else %}
+                                                    <td style="text-align:center;">-</td>
+                                                {% endif %}
+                                            </tr>
+                                                
+                                        {% endfor %}
+                                                
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% else %}
+                            <center><h3 class="text-danger">Search Result Not Found</h3></center>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+{% endblock %}

@@ -1,0 +1,561 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %} 
+<!--Welcome secton-->
+<!-- <div class="welcome-section text-center ptb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcurbs-inner">
+                    <div class="breadcrubs">
+                        <h2>Service</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+</div>
+<!--Header section end-->
+<!-- search bar Start -->
+<div class="search-bar animated slideOutUp">
+    <div class="table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="search-form-wrap">
+                            <button class="close-search"><i class="mdi mdi-close"></i></button>
+                            <form action="#">
+                                <input type="text" placeholder="Search here..." value="Search here..."/>
+                                <button class="search-button" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- search bar End -->
+<!--Element start-->
+<div class="elements pt-80 text-center white_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title mb-50">
+                    <h2>Our<span> Services</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Our services start-->
+
+    <!--Our services start-->
+    <div class="our-sevices text-center pb-80 static2 white_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="services-tab-menu mb-70">
+                        <ul class="nav" role="tablist">
+                            <li class="active"><a href="#towels" data-toggle="tab">Service</a></li>
+                            <!-- <li><a href="#breakfast" data-toggle="tab">Facilities</a></li>
+                            <li><a href="#reception" data-toggle="tab">Highlights</a></li> -->
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-tab-desc text-left">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="towels">
+
+                            <div class="our-sevices text-center ptb-80 white_bg">
+
+                                <div class="our-services-list">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/breakefast.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Breakfast & Buffet</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>Breakfast & Buffet</h2>
+                                                                        <p>Wellness is associated with happiness.That ties into being healthy, eating well and having a healthy breakfast.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/towles.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Towels and bedding</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>Towels and bedding</h2>
+                                                                        <p>Nothing makes you feel better than when you get into a hotel bed, and the sheets feel so good. Why shouldn't you wake up like that every day? Spend money on your mattress and bedding because these things make a difference on your sleep and, ultimately, your happiness.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/reception.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>24/7 Reception</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>24/7 Reception</h2>
+                                                                        <p>It's a great, great experience to finally get the reception that you know you rightfully deserve.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/silver.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Silver Oak</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;&emsp;Silver Oak&emsp;&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/multires.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Multi Cuisine Restaurant</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;Multi Cuisine Restaurant&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/bar.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Bear Cave</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;&emsp;Bear Cave&emsp;&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/red.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Red Dragon Multi Cuisine Restaurant</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>Red Dragon Multi Cuisine Restaurant</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/veg.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Pure Vegetarian Restaurant</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>Pure Vegetarian Restaurant</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img width="" src="{% static 'images/services/cottage.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Individual Cottages</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;Individual Cottages&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/rooms.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Well Oppointed Rooms</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;Well Oppointed Rooms&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/banquet.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Banquet and Conference Hall</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>Banquet and Conference Hall</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/rservice.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Room Service</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;Room Service&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/reception.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Childran Play Area</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;Childran Play Area&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/bonfire.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Bon Fire</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;&emsp;Bon Fire&emsp;&emsp;&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/banquet.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Ambit Theatre</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;Ambit Theatre&emsp;&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/walk.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Plantation Walk</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;Plantation Walk&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/supermarket.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Super Market</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;Super Market&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/cakeshop.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Cake Shop</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;&emsp;Cake Shop&emsp;&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/parking.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Ample Car Parking Area</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;Ample Car Parking Area&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12"><br>
+                                                <div class="single-services">
+                                                    <div class="services-img">
+                                                        <img src="{% static 'images/services/lawn.jpg' %}" alt="">
+                                                        <div class="services-title">
+                                                            <h2>Lawn Area</h2>
+                                                        </div>
+                                                        <div class="services-hover-desc">
+                                                            <div class="services-hover-inner">
+                                                                <div class="services-hover-table">
+                                                                    <div class="services-hover-table-cell">
+                                                                        <h2>&emsp;&emsp;&emsp;&emsp;Lawn Area&emsp;&emsp;&emsp;&emsp;</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-services">
+                            </div>
+                        </div>
+                        <!-- <div role="tabpanel" class="tab-pane" id="breakfast">
+                            <div class="single-services">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="services-img">
+                                        <img src="{% static 'images/services/services6.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="services-desc">
+                                        <div class="services-desc-inner">
+                                            <h1>Facilities of Hotel shevaroys</h1>
+                                            <center><p>Restaurant</p>
+                                                <p>Banquet Hall</p>
+                                                <p>Room service</p>
+                                                <p>Wi-fi Internet</p>
+                                                <p>Bar</p>
+                                                <p>Free Parking</p>
+                                                <p>Spa</p>
+                                                <p>Super Market</p> 
+                                                <p>Kids Play Area</p>
+                                                <p>Travel Desk</p></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div role="tabpanel" class="tab-pane" id="reception">
+                                <div class="single-services">
+                                   <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: #3ac4fa">
+                                    <div class="single-exclusive">
+                                        <h3>RESTAURANT & BAKERY</h3>
+                                        <p>The Hotel offers the best cuisines in town in its four food and beverage outlets and also provides personalized room service.<br><br> </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12" style="background-color:  #A9A9A9">
+                                    <div class="single-exclusive">
+                                        <h3>SONA-STEAM BATH</h3>
+                                        <p>Holidaying in a hill station does not have to mean forgoing the regular facial, hair cut or trim. <br><br><br><br></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: #3ac4fa">
+                                    <div class="single-exclusive">
+                                        <h3>BEAR CAVE</h3>
+                                        <p>A full-fledged Bar, serves a wide array of your favorite wines, beer, liquor and cocktails.<br><br><br><br></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12" style="background-color:  #A9A9A9">
+                                    <div class="single-exclusive">
+                                        <h3>THE LANTANA HALL</h3>
+                                        <p>The Lantana Hall is the ideal venue in yercaud to host any event or meet.The 2800 square feet luxuriously decorated hall boasts of state of the art facilities.<br><br></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Our services end-->
+
+
+
+</div>
+<!--elements end-->
+<!--hotel team start-->
+{% endblock %}

@@ -1,0 +1,104 @@
+
+
+{% extends "base.html"%}
+{% load static %}
+{% load user_agents %}
+{% block content %}
+</div>
+   <div class="elements ptb-80 text-center  ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-50">
+                            <h2><span>Login</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              {% if request|is_pc %}
+     <div class="contact-form-info ptb-100 white_bg">
+            <div  class="container"  style="padding-left: 300px;">
+                <!-- <div class="row"> -->
+                    <div class="col-md-8 col-sm-12 col-xs-12" >
+                        <div class="contact-form"  style="padding-left: 20% 30%">
+                            <div class="contact-form-title mb-10">
+
+                            </div>
+                            <div class="contact-form-title mb-10">
+                                
+                            </div>
+                            <div class="contact-form-inner">
+                                <form method="post">{% csrf_token %}
+                                    <div class="form-field-top mb-20">
+                                        <div class="form-field-name">
+                                            <input name="email" type="email" placeholder="Email">
+                                        </div>
+                                        <div class="form-field-name">
+                                            <input name="pass1" type="password" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-field-bottom">
+                                        <div class="submit mt-30"><button type="submit">Login</button></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="contact-form-title pt-100" >
+                                <span>Click Here  <a href="{% url 'register' %}">Sign Up</a> To Create A New Account</span>
+                            </div>
+                        </div>
+                    </div>
+              <!--   </div> -->
+            </div>
+        </div>
+
+{% endif %}
+
+
+            <div class="mobile hidden-lg hidden-md">
+            <div class="container">
+                <div class="contact-form-info ptb-100 white_bg">
+                    <div  class="container">
+                         <div class="row">
+                             <div class="col-md-8 col-sm-12 col-xs-12" >
+                                <div class="contact-form"  style="align-items: center; padding-left: 20% 30%">
+                                    <div class="contact-form-title mb-10">
+
+                                    </div>
+                                    <div class="contact-form-title mb-10">
+                                        
+                                    </div>
+                                    <div class="contact-form-inner">
+                                        <form method="post">{% csrf_token %}
+                                            <div class="form-field-top mb-20">
+                                                <div class="form-field-name">
+                                                    <input name="email" type="email" placeholder="Email">
+                                                </div>
+                                                <div class="form-field-name">
+                                                    <input name="pass1" type="password" placeholder="Password">
+                                                </div>
+                                            </div>
+                                            <div class="form-field-bottom">
+                                                <div class="submit mt-30"><button type="submit">Login</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="contact-form-title pt-100" >
+                                        <span>Click Here  <a href="{% url 'register' %}">Sign Up</a> To Create A New Account</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+             
+        
+
+           
+                   
+        
+        </div>
+        </div>
+{% endblock %}

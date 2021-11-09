@@ -1,0 +1,108 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+
+</div>
+
+<div class="room-booking ptb-80 white_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="section-title mb-80 text-center">
+                    <h2><span>{{r.roomname}}</span></h2>
+           		</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 side-bar left-side-bar">
+            <div class="side-bar-block support-block">
+                <div class="container">
+                    <div class="row">
+                    	<div class="col-md-8 col-lg-8 content-side">
+                   			<div class="room-description">
+                                <div id="room-inner-carousel"class="carousel slide" data-ride="carousel">
+                                    
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#room-inner-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="1"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="2"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="3"></li>
+                                    </ol>
+                                    
+                                    <div class="carousel-inner">
+                                    	<div class="item active">
+                                            <img src="{{r.img.url}}" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img src="{{r.img2.url}}" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img src="{{r.img3.url}}" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img src="{{r.img4.url}}" alt="">
+                                        </div>
+                                    </div>
+                        		</div>
+                            	
+                            	<br><br>
+                                
+                                <div>
+                                    <p>{{r.dis}}</p>
+                                </div>
+                                
+                                <br>
+                                <div id="room-facilities">
+                                	<div class="row">
+                                		<center>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img src="{% static 'images/icon/wifi.png' %}" style="width: 50px;height: 50px"></a>&emsp;&emsp;&emsp;
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img src="{% static 'images/icon/tv.png' %}" style="width: 50px;height: 50px"></a>&emsp;&emsp;&emsp;
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img src="{% static 'images/icon/coffee.png' %}" style="width: 50px;height: 50px"></a>&emsp;&emsp;&emsp;
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img src="{% static 'images/icon/fan.png' %}" style="width: 50px;height: 50px"></a>
+                                        </center>
+                               		</div>
+                               	</div>
+                                <div class="contact-form-title mb-25">
+                                   <h3 style="color:#0cb9db">Price</h3>
+                                </div>
+                                <p style="font-size:17px"><b style="color:#0cb9db">★</b>&emsp; Normal days :&emsp;<b>INR {{r.price}}</b> + Tax</p>
+                                <p style="font-size:17px"><b style="color:#0cb9db">★</b>&emsp; Special days :&emsp;<b>INR {{r.price2}}</b> + Tax</p>
+                                <br>
+                                <div class="explore">
+                                    <a href="{% url 'bookroom' r.roomname r.price %}">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4 side-bar left-side-bar">
+                            <div class="side-bar-block support-block">
+                                <div class="row">
+                                    <div class="container">
+                                        <div class="contact-form-title mb-25">
+                                           <h3 style="color:#0cb9db">TERMS AND CONDITIONS</h3>
+                                        </div>
+                                        <p style="font-size:15px"><b style="color:#0cb9db">★</b>&emsp; Per Rooms only 2 Adults allowed.</p>
+                                        <p style="font-size:15px"><b style="color:#0cb9db">★</b>&emsp; For Extra Bed <b>INR 800/-</b> will be charged.</p>
+                                        <p style="font-size:15px"><b style="color:#0cb9db">★</b>&emsp; Per Room only 2 Kids allowed. Kids age should be below 10.</p>
+
+                                        <br>
+                                        <div class="contact-form-title mb-25">
+                                           <h3 style="color:#0cb9db">CANCELLATION POLICY</h3>
+                                        </div>
+                                        <!-- <p style="font-size:15px"><b style="color:#0cb9db">★</b>&emsp; After cancelled, Amount will be Refunded within 5 to 7 working days.</p>
+                                        <p style="font-size:15px"><b style="color:#0cb9db">★</b>&emsp; Cannot Cancel Booking before 24 hours.</p> -->
+                                        <p style="font-size:15px">No Cancellations are allowed / entertained 24 hours prior a check in date.<br> If you cancel a booking prior to 24 hours from your check in date, the<br> amount will be refunded to your account within 5 to 7 working days.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

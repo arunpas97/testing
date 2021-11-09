@@ -1,0 +1,73 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+</div>
+<script type="text/javascript">
+   //exporte les données sélectionnées
+    var $table = $('#table');
+    $(function () {
+        $('#toolbar').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+    var trBoldBlue = $("table");
+
+    $(trBoldBlue).on("click", "tr", function (){
+        $(this).toggleClass("bold-blue");
+    });
+</script>
+<div class="elements ptb-80 text-center  ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title mb-50">
+                    <h2><span>Cancel </span> Booking</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+          
+    <div class="hotel-team white_bg">
+        <div class="container">
+            <div class="col-md-12">
+                <table class="table">
+                    <h3>Are You Sure, You want to Cancel this Booking?</h3>
+                    <br><br>
+                    <thead>
+                        <tr>
+                            <td><b style="text-align: center;">Booking Id</b></td>
+                            <td><b style="text-align: center;">User</b></td>
+                            <td><b style="text-align: center;">Room</b></td>
+                            <td><b style="text-align: center;">Total Rooms</b></td>
+                            <td><b style="text-align: center;">Adult</b></td>
+                            <td><b style="text-align: center;">Kids</b></td>
+                            <td><b style="text-align: center;">Check in</b></td>
+                            <td><b style="text-align: center;">Check out</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in obj %}
+                            <tr>
+                                <td>{{i.id}}</td>
+                                <td>{{i.name}}</td>
+                                <td>{{i.roomname}}</td>
+                                <td>{{i.noofroom}}</td>
+                                <td>{{i.adult}}</td>
+                                <td>{{i.kids}}</td>
+                                <td>{{i.bookIn}}</td>
+                                <td>{{i.bookOut}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'cancel_booking' id %}" class="btn waves-effect waves-light btn-danger">Cancel Booking</a>&emsp;
+                <a href="{% url 'mybooking' %}" class="btn waves-effect waves-light btn-primary"> No </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

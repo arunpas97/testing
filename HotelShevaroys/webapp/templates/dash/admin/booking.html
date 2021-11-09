@@ -1,0 +1,168 @@
+{% extends 'dashbase1.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class=" align-self-center">
+            <h3 class="text-themecolor mb-0">Add Room Booking </h3>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'superadmin1' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Add New Room Booking </li>
+            </ol>
+        </div>
+    </div>
+    <br><br>
+ <div class="container-fluid">
+ 	<div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex no-block align-items-center">
+                                    <div>
+                                        <h4 class="card-title">Add A New Room Booking </h4>
+                                       <!--  <h6 class="card-subtitle"> All bootstrap element classies </h6> -->
+                                    </div>
+                                </div>
+                                <form class="form" method="POST">{% csrf_token %}
+
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="name" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">mobile</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="phone" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">email</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="email" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Room Name</label>
+                                        <div class="col-md-10">
+                                            <select class="custom-select col-12" name="roomname" type="text" required>
+                                            	<option selected="">Choose...</option>
+                                            	<option value="Standard Room">Standard Room</option>
+                                               <option value="Bougainvilla Room">Bougainvilla Room</option>
+                                                <option value="Rose Room">Rose Room</option>
+                                                <option value="Dahlia Room">Dahlia Room</option>
+                                                 <option value="Orchid Room">Orchid Room</option>
+                                                 <option value="Deluxe Villa">Deluxe Villa</option>
+                                                <option value="Luxury Villa">Luxury Villa</option>
+
+                                               
+                                            </select>
+                                        </div>
+                                    </div>
+                                     <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">noofroom</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="noofroom" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                     <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">adult</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="adult" type="text" 
+                                                id="example-text-input" required >
+                                        </div>
+                                    </div>
+                                     <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">kids</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="kids" type="text" 
+                                                id="example-text-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">exper</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="exper" type="text" 
+                                                id="example-text-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mt-4 row ">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Book In</label>
+                                               
+                                                <div  class="col-md-10">
+                                                     <input type="text" name="bookIn" class="form-control complex-colorpicker" id="datepicker-autoclose" placeholder="mm/dd/yyyy" required>
+                                                   
+                                                </div>
+                                    </div>
+                                    <div class="form-group mt-4 row ">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Book Out</label>
+                                               
+                                                <div  class="col-md-10">
+                                                     <input type="text" name="bookOut" 
+                                                     class="form-control mydatepicker" 
+                                                     id="datepicker-autoclose" placeholder="mm/dd/yyyy" required>
+                                                   
+                                                </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Amount</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="amount" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Tax</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="t" type="text" 
+                                                id="example-text-input" required> 
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Total Amount</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="tamount" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 row">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Payment ID</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="razorpayid" type="text" 
+                                                id="example-text-input" required>
+                                        </div>
+                                    </div>
+                                                                       
+
+                                   <!--   <div class="form-group mt-4 row ">
+                                        <label for="example-text-input" class="col-md-2 col-form-label">Book Out</label>
+                                               
+                                                <div  class="col-md-10">
+                                                     <input type="text" name="bookOut" class="form-control complex-colorpicker" id="datepicker-autoclose" placeholder="mm/dd/yyyy">
+                                                   
+                                                </div>
+                                    </div> -->
+                                    <center>
+                                  <button type="submit"
+                                        class="btn waves-effect waves-light btn-rounded btn-success">Book a Room</button></center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ </div>
+
+</div>
+
+
+{% endblock %}

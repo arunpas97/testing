@@ -1,0 +1,76 @@
+{% extends 'dashbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class=" align-self-center">
+            <h3 class="text-themecolor mb-0">Update Room Image</h3>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'superadmin' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Update Room Image</li>
+            </ol>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div>
+                                <h4 class="card-title">Update A  Room Image </h4>
+                               <!--  <h6 class="card-subtitle"> All bootstrap element classies </h6> -->
+                            </div>
+                        </div>
+                        <form class="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Room Name</label>
+                                <div class="col-md-10">
+                                    <select class="custom-select col-12" name="room" type="text" required="">
+                                        <option selected="">Choose...</option>
+                                        <option value="Standard Room">Standard Room</option>
+                                        <option value="Bougainvilla Room">Bougainvilla Room</option>
+                                        <option value="Rose Room">Rose Room</option>
+                                        <option value="Dahlia Room">Dahlia Room</option>
+                                        <option value="Orchid Room">Orchid Room</option>
+                                        <option value="King Orchid ">King Orchid </option>
+                                        <option value="Deluxe Villa">Deluxe Villa</option>
+                                        <option value="Luxury Villa">Luxury Villa</option>
+                                    </select>
+                                </div>
+                            </div>
+                                    
+                            <div class="custom-file mb-3">
+                                <!-- <label class="custom-file-label form-control" for="customFile">Room Image</label>
+                                <input type="file" name="img" class="custom-file-input" id="customFile" required="" alt="img"> -->
+                                <label for="customFile">Upload Image 1</label>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" name="img" required="">
+                                <br><br>
+                                <label for="customFile">Upload Image 2</label>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" name="img2" required="">
+                                <br><br>
+                                <label for="customFile">Upload Image 3</label>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" name="img3" required="">  
+                                <br><br>
+                                <label for="customFile">Upload Image 4</label>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" name="img4" required="">                              
+                            </div>
+                            
+                            <center>
+                                <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success">Success</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'room/skin/blue-light-2.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'room/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'room/yellow.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'room/style.css' %}">
+            
+        </div> 
+        <div class="room-booking ptb-80 white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-80 text-center">
+                            <h2>Booking <span>rooms</span></h2>
+                           <!--  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                <div class="container">
+                    <div class="row"> <!-- end columns -->
+                        
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 content-side">
+                            
+                            <div class="room-description">
+                                
+                                <div id="room-inner-carousel" class="carousel slide" data-ride="carousel">
+                                    
+                                    <div class="price-tag">
+                                        <p><span>₹ {{obj2.price}} </span> +Taxes / per day</p>
+                                    </div><!-- end price-tag -->
+                                    
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#room-inner-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="1"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="2"></li>
+                                        <li data-target="#room-inner-carousel" data-slide-to="3"></li>
+                                    </ol>
+                                    
+                                    <div class="carousel-inner">
+                                    
+                                        <div class="item active">
+                                            <img src="{% static a %}" alt="Los Angeles">
+                                        </div><!-- end item -->
+                                        
+                                        <div class="item">
+                                            <img src="{% static a %}" alt="Chicago">
+                                        </div><!-- end item -->
+                                        
+                                        <div class="item">
+                                            <img src="{% static a %}" alt="Los Angeles">
+                                        </div><!-- end item -->
+                                        
+                                        <div class="item">
+                                            <img src="{% static a %}" alt="Chicago">
+                                        </div><!-- end item -->
+                                        
+                                    </div><!-- end carousel-inner -->
+                                </div><!-- end room-inner-casrousel -->
+
+                                <div id="room-facilities">
+                                    <div class="row">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&emsp;&emsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&emsp;&emsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Hot Water"><img  src="{% static 'images/icon/8.png' %}"></a>&emsp;&emsp;
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Room Amenities"><img  src="{% static 'images/icon/7.png' %}"></a>
+                                   </div><!-- end row -->
+                                </div><!-- end room-facilities -->
+                                
+                                <div id="description">
+                                    <div class="innerpage-heading">
+                                        <h1>{{obj2.roomname}}</h1>
+                                        <!-- <p>{{a}}</p> -->
+                                        <span class="room-position">{{obj2.dis}}</span>
+                                    </div><!-- end innerpage-heading -->
+                                    
+                                  <p></p>
+ {% if request.user.is_authenticated %}
+
+                                            <a href="{% url 'bookroom' obj1.roomname obj1.price %}" class="btn btn-yellow btn-block">Book now</a>
+                                       
+
+                                   <!--  <a href="{% url 'bookroom' obj1.roomname obj1.price %}" class="btn btn-yellow btn-lg btn-block">
+                                    Book Now 
+                                </a> -->
+                                {% else %}
+                                        <div class="room-book text-center" >
+                                            <a href="{% url 'login' %}" class="btn btn-yellow  btn-block">Book now</a>
+                                        </div>
+                                        {% endif %}
+                             
+                             </div><!-- end description -->
+                                
+                            </div><!-- end room-description -->
+                        </div><!-- end columns -->
+
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 side-bar left-side-bar">
+                        
+                            <div class="side-bar-block cart-highlight">
+                                <p>Standard Rates</p>
+                            </div><!-- end side-bar-block -->
+                            
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                    <div class="side-bar-block support-block">
+                                        <h3>For Reservations</h3>
+                                       <!--  <p class="query">If you have any question please don't hesitate to contact us</p> -->
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <span><i class="fa fa-phone"></i></span>
+
+                                                <div class="text">
+                                                    <p><a href="tel:+919944999569">+919944 99 9569</a></p>
+                                                    <p><a href="tel:+914281222288">+91 4281-222288</a></p>
+                                                    <p><a href="tel:+914281222383">+91 4281-222383</a></p>
+                                                    <p><a href="tel:+914281222384">+91 4281-222384</a></p><!-- 
+                                                    <p>+91 4281-222285</p>
+                                                    <p>+91 4281-222286</p> -->
+                                                </div><!-- end text -->
+                                            </li>
+                                            
+                                            <li>
+                                                <span><i class="fa fa-envelope"></i></span>
+                                                <div class="text">
+
+                                                    <p>
+                                                        <a href="mailto:reservations@hotelshevaroys.com">
+                                                            reservations@
+
+hotelshevaroys.com
+                                                        </a>
+                                                    </p>
+                                                </div><!-- end text -->
+                                            </li>
+                                        </ul>
+                                    </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->
+                                
+                                
+                                
+                            </div><!-- end row -->
+                            
+                        </div>
+
+                    </div><!-- end row -->
+                </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+        
+
+
+        <div class="our-room text-center ptb-80 white-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title mb-75">
+                            <h2>Similar <span>Rooms</span></h2>
+                            
+                    </div>
+                </div>
+                <div class="our-room-show">
+                    <div class="row">
+                        <div class="carousel-list">
+
+                            {% for i in obj1 %}
+                            
+                            <div class="col-md-4">
+                                <div class="single-room">
+                                    <div class="room-img">
+                                        <a href="{% url 'room_detail' i.roomname %}">
+
+                                            <!-- <img src="{% static 'images/room/1.jpg' %}" alt=""> -->
+
+                                             {% if i.roomname == "Standard Room" %}
+                                            <img src="{% static aa %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                            
+                                            {% if i.roomname == "Bougainvilla Room" %}
+                                            <img src="{% static b %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                            
+                                            {% if i.roomname == "Rose Room" %}
+                                            <img src="{% static c %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                            {% if i.roomname == "Dahlia Room" %}
+                                            <img src="{% static d %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                            {% if i.roomname == "Orchid Room" %}
+                                            <img src="{% static e %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                            {% if i.roomname == "Deluxe Villa" %}
+                                            <img src="{% static f %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                            {% if i.roomname == "Luxury Villa" %}
+                                            <img src="{% static g %}" alt=""></a>
+                                            {% else %}
+                                            {% endif %}
+                                        </a>
+                                    </div>
+                                    <div class="room-desc">
+                                        <div class="room-name">
+                                            <h3><a href="{% url 'room_detail' i.roomname %}">{{i.roomname}}</a></h3>
+                                        </div>
+                                        <div class="room-rent">
+                                            <h5>INR {{i.price}} <span>+ Taxes / Per day</span></h5>
+                                        </div>
+                                        {% if request.user.is_authenticated %}
+                                        <div class="room-book">
+                                            <a href="{% url 'bookroom' i.roomname i.price  %}">Book now</a>
+                                        </div>
+                                        <!-- <div class="room-book">
+                                            <a href="{% url 'bookroom' i.roomname  i.price %}">Book now</a>
+                                        </div> -->
+                                        {% else %}
+                                        <div class="room-book">
+                                            <a href="{% url 'login' %}">Book now</a>
+                                        </div>
+                                        {% endif %}
+                                        <br><br>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Coffee"><img  src="{% static 'images/icon/1.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Television"><img  src="{% static 'images/icon/2.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Wifi"><img  src="{% static 'images/icon/3.png' %}"></a>&nbsp;|&nbsp;
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Fan"><img  src="{% static 'images/icon/9.png' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

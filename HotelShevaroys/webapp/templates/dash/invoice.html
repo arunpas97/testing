@@ -1,0 +1,180 @@
+{% extends 'dashbase.html' %}
+{% load static %}
+
+{% block content %}
+
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <div class="invoice-application">
+                <!-- Left Part -->
+                <div class="left-part bg-white fixed-left-part list-of-user">
+                            <!-- Mobile toggle button -->
+                            <a class="ti-menu ti-close btn btn-success show-left-part d-block d-md-none" href="javascript:void(0)"></a>
+                            <!-- Mobile toggle button -->
+                          <div class="p-3">
+                                <h4>Chat Sidebar</h4>
+                          </div>
+                            <div class="scrollable position-relative" style="height:100%;">
+                                <div class="p-3 border-bottom">
+                                        <h5 class="card-title">Search Invoice</h5>
+                                        <form>
+                                            <div class="searchbar">
+                                                <input class="form-control" type="text" placeholder="Search Invoice">
+                                            </div>
+                                        </form>
+                                </div>
+                                <ul class="mailbox list-style-none app-invoice">
+                                        <li>
+                                            <div class="message-center chat-scroll invoice-users">
+                                                {% for i in c %}
+                                                <a href="" class="invoice-user message-item align-items-center border-bottom px-3 py-2 active listing-user" id="invoice-123" data-invoice-id="123">
+                                                        <span class="user-img position-relative d-inline-block"> 
+                                                            <button class="btn btn-success btn-circle"><i class="mdi mdi-face"></i></button>
+                                                        </span>
+                                                        <div class="mail-contnet w-75 d-inline-block v-middle pl-2">
+                                                            <h5 class="message-title mb-0 mt-1 text-truncate invoice-customer">To: {{i.name}}</h5> 
+                                                            <span class="font-12 text-nowrap d-block text-muted text-truncate invoice-id"><span class="font-weight-bold text-dark">Id:</span> #{{i.id}}</span> 
+                                                            <span class="font-12 text-nowrap d-block text-muted invoice-date"><span class="font-weight-bold text-dark">Date:</span> 9 Fab 2020</span> 
+                                                        </div>
+                                                </a>
+                                                {% endfor %}
+                                            </div>
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ./Left part -->
+                        <!-- Right Part -->
+                        <div class="right-part invoice-box">
+                            <div class="p-4 invoice-inner-part">
+                                <div class="chat-not-selected">
+                                    <div class="text-center">
+                                        <span class="display-5 text-info"><i class="mdi mdi-file-document-box"></i></span>
+                                        <h5>Open Invoice from the list</h5>
+                                    </div>
+                                </div>
+
+                                {% for i in c %}
+                                <div class="invoiceing-box">
+                                    <div class="card card-body">
+                                        <div class="invoice-header d-flex align-items-center border-bottom pb-3">
+                                            <h3 class="font-medium text-uppercase mb-0">Invoice</h3>
+                                        <div class="ml-auto">
+                                            <h4 class="{{i.id}}"></h4>
+                                        </div>
+                                    </div>
+                                    <div class="" id="custom-invoice">
+                                        <!-- (1) -->
+                                        <div class="invoice-{{i.id}}" id="printableArea">
+                                            <div class="row pt-3">
+                                                      <div class="col-md-12">
+                                                            <div class="pull-left">
+                                                                <address>
+                                                                    <h3>&nbsp;From,</h3>
+                                                                    <h4 class="mb-0 font-weight-bold">&nbsp;Hotel Shevaroys</h4>
+                                                                    <div class="mb-2">
+                                                                        <span class="font-weight-bold ml-1">Invoice Id:</span><span class="{{i.id}} ml-2"></span>
+                                                                        <h6 class="text-muted font-medium">&nbsp;Email: steve@gmail.com</h6>
+                                                                    </div>
+                                                                    <p class="text-muted ml-1">E 104, Dharti-2,
+                                                                        <br/> Nr' Viswakarma Temple,
+                                                                        <br/> Talaja Road,
+                                                                        <br/> Bhavnagar - 364002</p>
+                                                                </address>
+                                                            </div>
+                                                            <div class="pull-right text-right">
+                                                                <address>
+                                                                    <h3>To,</h3>
+                                                                    <h4 class="font-bold">Shraddha Chhatraliya,</h4>
+                                                                    <p class="text-muted ml-4">E 104, Dharti-2,
+                                                                        <br/> Nr' Viswakarma Temple,
+                                                                        <br/> Talaja Road,
+                                                                        <br/> Bhavnagar - 364002</p>
+                                                                    <p class="mt-4"><b>Invoice Date :</b> <i class="fa fa-calendar"></i> 23rd Jan 2018</p>
+                                                                    <p><b>Due Date :</b> <i class="fa fa-calendar"></i> 25th Jan 2018</p>
+                                                                </address>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                            <div class="table-responsive mt-5" style="clear: both;">
+                                                                <table class="table table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-center">#</th>
+                                                                            <th>Description</th>
+                                                                            <th class="text-right">Quantity</th>
+                                                                            <th class="text-right">Unit Cost</th>
+                                                                            <th class="text-right">Total</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="text-center">1</td>
+                                                                            <td>Milk Powder</td>
+                                                                            <td class="text-right">2 </td>
+                                                                            <td class="text-right"> $24 </td>
+                                                                            <td class="text-right"> $48 </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center">2</td>
+                                                                            <td>Air Conditioner</td>
+                                                                            <td class="text-right"> 3 </td>
+                                                                            <td class="text-right"> $500 </td>
+                                                                            <td class="text-right"> $1500 </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center">3</td>
+                                                                            <td>RC Cars</td>
+                                                                            <td class="text-right"> 20 </td>
+                                                                            <td class="text-right"> %600 </td>
+                                                                            <td class="text-right"> $12000 </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center">4</td>
+                                                                            <td>Down Coat</td>
+                                                                            <td class="text-right"> 60 </td>
+                                                                            <td class="text-right">$5 </td>
+                                                                            <td class="text-right"> $300 </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                            <div class="pull-right mt-4 text-right">
+                                                                <p>Sub - Total amount: $13,848</p>
+                                                                <p>vat (10%) : $138 </p>
+                                                                <hr>
+                                                                <h3><b>Total :</b> $13,986</h3>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <hr>
+                                                            <div class="text-right">
+                                                                <button class="btn btn-danger" type="submit"> Proceed to payment </button>
+                                                                <button class="btn btn-default print-page" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                        </div>  <!-- ./(1) -->
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- ./Right Part -->
+                    </div>
+            </div>
+            <footer class="footer text-center">
+                All rights reserved by Materialpro.
+            </footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+
+{% endblock %}

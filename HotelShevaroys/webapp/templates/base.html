@@ -1,0 +1,471 @@
+{% load static %}
+{% load user_agents %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Hotel Shevaroys | Your Home in the hills</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static 'images/logo/icon.png' %}" type="images/x-icon" rel="shortcut icon">
+    <!-- Place favicon.ico in the root directory -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <!--Font Awesome-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!--Animate CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet" />
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="{% static 'css/core.css' %}">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="{% static 'css/shortcode/shortcodes.css' %}">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/copen.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'css/gallery/popup-lightbox.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
+
+    
+
+    
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->  
+    
+    <!-- Pre Loader
+    ============================================ -->
+    <div class="preloader">
+        <div class="loading-center">
+            <div class="loading-center-absolute">
+                <div class="object object_one"></div>
+                <div class="object object_two"></div>
+                <div class="object object_three"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <!--Header section start-->
+        <div class="header-section">
+            <div class="bg-opacity"></div>
+            <!-- <div class="top-header" > -->
+                <div class="top-header sticky-header">
+                <div class="top-header-inner">
+                    <div class="container">
+                        <div class="mgea-full-width">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="logo mt-15">
+                                        <a href="{% url 'index' %}"><img src="{% static 'images/logo/logo1.png' %}" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-sm-10 hidden-xs">
+                                    <div class="header-top ptb-10">
+                                        <div class="adresses">
+                                           <div class="phone">
+                                                <p>call 
+                                                    <span>
+                                                    <a href="tel:+919944999599" style="color: #fff">    +91-9944999599
+                                                    </a>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="email">
+                                                <p>Email: <span><a style="color: #fff" href="mailto:reservations@hotelshevaroys.com">reservations@hotelshevaroys.com</a></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="social-links">
+                                            <!-- <a target="_blank" href="https://www.facebook.com/Hotel-Shevaroys-268501073213044/"><i class="mdi mdi-facebook"></i></a> -->
+                                            <a target="_blank" href="https://www.facebook.com/HotelShevaroysYercaud/"><i class="mdi mdi-facebook"></i></a>
+                                            <a href="https://www.instagram.com/hotel_shevaroys_/"><i class="mdi mdi-instagram"></i></a>
+                                            <a href="https://twitter.com/Hotel_Shevaroys"><i class="mdi mdi-twitter"></i></a>
+                                            <a href="#0"><i class="mdi mdi-youtube-play"></i></a>
+                                            <a href="#0"><i class="mdi mdi-pinterest"></i></a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="menu mt-20">
+                                        <div class="menu-list hidden-sm hidden-xs">
+                                            <nav>
+                                                <ul>
+                                                    {% if request.user.is_authenticated %}
+                                                    <li><a href="{% url 'index' %}">home</a></li>
+                                                    <li><a href="{% url 'room' %}">rooms</a></li>
+                                                    <li><a href="{% url 'hall' %}">CONFERENCE HALL</a></li>
+                                                    <li><a href="{% url 'service' %}">Service</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    <li><a href="{% url 'about' %}">About<i class="fa fa-angle-down"></i></a>
+                                                    <ul class="dropdown_menu">
+                                                        
+                                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                                                    </ul>
+                                                    </li>
+
+                                                    
+                                                    <li>
+                                                        <a href="#">{{request.user.profile.name}}<i class="fa fa-angle-down"></i>
+                                                        </a>
+                                                        <ul class="dropdown_menu">
+                                                            {% if user.admin_status == True %}
+                                                                <li><a href="{% url 'superadmin' %}">Admin Dashboard</a></li>
+                                                               
+                                                                <!-- <li><a href="{% url 'mybooking' %}">My Bookings</a></li>
+                                                                <li><a href="{% url 'previous_booking' %}">My Previous Bookings</a></li> -->
+                                                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                                            {% elif user.radmin_status == True %}
+                                                                <li><a href="{% url 'superadmin1' %}">Reception Admin Dashboard</a></li>
+                                                                
+                                                                <!-- <li><a href="{% url 'mybooking' %}">My Bookings</a></li>
+                                                                <li><a href="{% url 'previous_booking' %}">My Previous Bookings</a></li> -->
+                                                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                                            {% else %}
+                                                                
+                                                                <li><a href="{% url 'mybooking' %}">My Bookings</a></li>
+                                                                <li><a href="{% url 'previous_booking' %}">My Previous Bookings</a></li>
+                                                                <li><a href="{% url 'cancel_booking_list' %}">My Cancelled Bookings</a></li>
+                                                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                                            {% endif %}
+                                                        </ul>
+                                                    </li>
+                                                    {% else %}
+                                                    <li><a href="{% url 'index' %}">home</a></li>
+                                                    <li><a href="{% url 'room' %}">rooms</a></li>
+                                                    <li><a href="{% url 'hall' %}">CONFERENCE HALL</a></li>
+                                                    <!-- <li><a href="{% url 'service' %}">Service</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>                                                    
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    
+                                                    <li><a href="{% url 'contact' %}">Contact</a></li> -->
+                                                    <li><a href="{% url 'service' %}">Service</a></li>
+                                                    <li><a href="{% url 'about' %}">About<i class="fa fa-angle-down"></i></a>
+                                                        <ul class="dropdown_menu">
+                                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                        </ul> </li>
+                                                    <li>
+                                                        <a href="#">My Account
+                                                            <i class="fa fa-angle-down"></i>
+                                                        </a>
+                                                        <ul class="dropdown_menu">
+                                                            <li>
+                                                                <a href="{% url 'login' %}">Login</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{% url 'register' %}">Register</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li >
+                                                        <div class="explore">
+                                                        <a href="{% url 'login' %}" >Book Room</a></div>
+
+                                                    </li>
+                                                    {% endif %}
+                                                    
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                 <!-- Mobile menu start -->
+                 
+                <div class="mobile-menu-area hidden-lg hidden-md">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <nav id="dropdown">
+                                <ul>
+                                   <!-- <li><a href="{% url 'index' %}">home</a></li>
+                                   <li><a href="{% url 'room' %}">rooms</a></li>
+                                   <li><a href="{% url 'hall' %}">CONFERENCE HALL</a></li>
+                                   <li><a href="{% url 'service' %}">Service</a></li>
+                                   <li><a href="{% url 'about' %}">About</a></li>                                                    
+                                   <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                   
+                                   <li><a href="{% url 'contact' %}">Contact</a></li> -->
+                                    {% if request.user.is_authenticated %}
+                                                    <li><a href="{% url 'index' %}">home</a></li>
+                                                    <li><a href="{% url 'room' %}">rooms</a></li>
+                                                    <li><a href="{% url 'hall' %}">CONFERENCE HALL</a></li>
+                                                    <li><a href="{% url 'service' %}">Service</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    <li>
+                                                        <a href="#">{{request.user.profile.name}}<i class="fa fa-angle-down"></i>
+                                                        </a>
+                                                        <ul class="dropdown_menu">
+                                                            <li><a href="{% url 'mybooking' %}">My Bookings</a></li>
+                                                            <li><a href="{% url 'previous_booking' %}">My Previous Bookings</a></li>
+                                                            <li><a href="{% url 'cancel_booking_list' %}">My Cancelled Bookings</a></li>
+                                                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    {% else %}
+                                                    <li><a href="{% url 'index' %}">home</a></li>
+                                                    <li><a href="{% url 'room' %}">rooms</a></li>
+                                                    <li><a href="{% url 'hall' %}">CONFERENCE HALL</a></li>
+                                                    <li><a href="{% url 'service' %}">Service</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>                                                    
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    
+                                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                                    <li>
+                                                        <a href="#">My Account
+                                                            <i class="fa fa-angle-down"></i>
+                                                        </a>
+                                                        <ul class="dropdown_menu">
+                                                            <li>
+                                                                <a href="{% url 'login' %}">Login</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{% url 'register' %}">Register</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    {% endif %}
+                               </ul>
+                        </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile menu end -->
+            </div>
+
+{% if messages %} {% for message in messages %}
+<script>
+    alert("{{ message }}");
+                // Swal.fire({
+                //       title: '<h1>{{ message }}</h1>',
+                //       animation: false,
+                //       customClass: {
+                //         popup: 'animated tada'
+                //       }
+                //     })
+            </script>
+            {% endfor %} {% endif %} 
+
+            <!-- {% if messages %}
+                  {% for msg in messages %}
+                    <script>
+                      // alert("{{msg}}")
+                      swal("{{msg}}");
+                    </script>
+                  {% endfor %}
+                {% endif %}
+ -->
+
+{% block content %}
+
+{% endblock %}
+
+
+                   <!--Footer start -->
+        <div class="footer ptb-100">
+            <div class="footer-bg-opacity"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="single-footer mt-0">
+                            <div class="logo">
+                                <img src="{% static 'images/logo/logo.png' %}" alt="">
+                            </div>
+                            <div class="f-adress">
+                                <p><span>Address:</span> Hospital Road, Yercaud, Salem, Tamil Nadu 636601.</p>
+                            </div>
+                            <!-- <div class="hotel-contact">
+                                <p><span>phone:</span> 
+                                    <a href="tel:+919944999599" style="color: #fff">
+                                        +91-9944999599
+                                    </a>
+                                </p>
+                                <p><span>Email:</span> reservations@hotelshevaroys.com</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-3 hidden-sm col-xs-6">
+                        <div class="single-footer">
+                           <h3>Quick Links</h3>
+                           <div class="quick-item">
+                                <ul>
+                                    <li><a href="{% url 'index' %}">home</a></li>
+                                    <li><a href="{% url 'room' %}">rooms</a></li>
+                                    <li><a href="{% url 'hall' %}">Conference Hall</a></li>
+                                    <li><a href="{% url 'service' %}">Service</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>           
+                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="single-footer">
+                            <h3>Get in touch</h3>
+                            <div class="quick-item">
+                                <ul>
+                                    <li><a target="_blank" href="https://www.facebook.com/HotelShevaroysYercaud/">Facebook</a></li>
+                                    <li><a href="https://www.instagram.com/hotel_shevaroys_/">Instagram</a></li>
+                                    <li><a href="https://twitter.com/Hotel_Shevaroys">Twitter</a></li>
+                                    
+                                    <li><a href="#0">Pintrest</a></li>
+                                    <li><a href="#0">Youtube</a></li>   
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="single-footer">
+                            <h3>Contact Us</h3>
+                            <div class="hotel-contact">
+                                <p><span><i class="fa fa-phone-square"></i> </span> 
+                                    <a href="tel:+919944999599" style="color: #fff">
+                                        +91-9944999599
+                                    </a><br>
+                                    <span><i class="fa fa-phone-square"></i> </span> 
+                                    <a href="tel:+919944999569" style="color: #fff">
+                                        +91-9944999569
+                                    </a><br>
+                                    <span><i class="fa fa-phone-square"></i> </span> 
+                                    <a href="tel:+914281222288" style="color: #fff">
+                                        +91-4281-222288
+                                    </a><br>
+                                    <span><i class="fa fa-phone-square"></i> </span> 
+                                    <a href="tel:+914281222383" style="color: #fff">
+                                        +91-4281-222383
+                                    </a>
+
+                                </p>
+                                <p><span><i class="fa fa-envelope"></i></span> <a style="color: #fff" href="mailto:reservations@hotelshevaroys.com">reservations@hotelshevaroys.com</p></a>
+                            </div>
+                            <!-- <div class="quick-item">
+                                <ul>
+                                    <li><a href="tel:+919944999599">+91 9944 99 9599</a></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>          
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                           </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright ptb-20 white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-8 col-xs-12">
+                        <p>©2020 Hotel Shevaroys .All right reserved.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><p>powered by <a target="_blank" href="https://www.i18nsolutions.in/development"><font size="1" color="#3d3d3d">i18n Solutions.</font></a></p></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer end -->
+    </div>
+    {% if request.path == '/booking/STANDARD_ROOM/' %}
+    {% elif request.path == '/booking/BOUGAINVILLA_ROOM/' %}
+    {% elif request.path == '/booking/ROSE_ROOM/' %}
+    {% elif request.path == '/booking/DAHLIA_ROOM/' %}
+    {% elif request.path == '/booking/ORCHID_ROOM/' %}
+    {% elif request.path == '/booking/DELUXE_VILLA/' %}
+    {% elif request.path == '/booking/LUXURY_VILLA/' %}
+    {% else %}
+    <!-- <div class="callout">
+        <span class="closebtn" style="color: #000" onclick="this.parentElement.style.display='none';">×</span>
+            <a href="{% url 'roseroom' %}"><img src="{% static 'images/offer/off.jpg' %}"></a>
+            <a href="{% url 'roseroom' %}" title="Offer only Rose Room"><video autoplay playsinline muted loop poster="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/dc27a106ecfba517711b04ce152b6ea1_screen.jpg?ts=1577104951" width="281" height="400"><source src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/dc27a106ecfba517711b04ce152b6ea1_screen.mp4?ts=1577104951" type="video/mp4"></video></a>
+    </div> -->
+    {% endif %}
+
+    
+   <!-- Placed js at the end of the document so the pages load faster -->
+
+    <!-- jquery latest version -->
+    <script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>
+    <!-- Bootstrap framework js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!--counter up js-->
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <!-- Video player js -->
+    <script src="{% static 'js/video-player.js' %}"></script>
+    <!-- headlines js -->
+    <script src="{% static 'js/animated-headlines.js' %}"></script>
+    <!-- Ajax mail js -->
+    <script src="{% static 'js/mailchimp.js' %}"></script>
+    <!-- Ajax mail js -->
+    <script src="{% static 'js/ajax-mail.js' %}"></script>
+    <!-- parallax js -->
+    <script src="{% static 'js/parallax.js' %}"></script>
+    <!-- textilate js -->
+    <script src="{% static 'js/textilate.js' %}"></script>
+    <script src="{% static 'js/lettering.js' %}"></script>
+    <!--isotope js-->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/packery-mode.pkgd.min.js' %}"></script>
+    <!-- Owl carousel Js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!--Magnificant js-->
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/gallery/jquery.popup.lightbox.js' %}"></script>
+
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+
+    <!-- <script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "919500339964", // WhatsApp number
+            call_to_action: "Message us", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script> -->
+
+</body>
+
+</html>

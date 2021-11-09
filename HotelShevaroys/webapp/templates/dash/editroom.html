@@ -1,0 +1,165 @@
+{% extends 'dashbase.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class=" align-self-center">
+            <h3 class="text-themecolor mb-0">Edit Room</h3>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'superadmin' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Edit Room Details</li>
+            </ol>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div>
+                                <h4 class="card-title">Edit {{data1.roomname}} </h4>
+                               <!--  <h6 class="card-subtitle"> All bootstrap element classies </h6> -->
+                            </div>
+                        </div>
+                        <form class="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Room Name</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="roomname" value="{{data1.roomname}}"  type="text" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Room Type</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" value="{{data1.roomtype}}" name="roomtype" type="text" >
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Capacity</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="capacity" value="{{data1.capacity}}" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Price</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="price" value="{{data1.price}}" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Special Price</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="price2" value="{{data1.price2}}" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Special Price Date 1</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="max_price_date1" id="datepicker" placeholder="dd/mm/yyyy" value="{{data1.max_price_date1}}" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Special Price Date 2</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="max_price_date2" id="datepicker" placeholder="dd/mm/yyyy" value="{{data1.max_price_date2}}" >
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Available Rooms</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="size" type="text" id="example-text-input"  value="{{data1.size}}" >
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 row">   
+                                {% if data1.img == data1.img %}
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Image Location 1</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" value="{{data1.img.url}}" type="text" id="example-text-input" readonly>
+                                    </div>
+                                {% else %}
+                                    <input type="file" name="img" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label form-control" for="customFile">Room Image 1</label>
+                                {% endif %}
+                            </div>
+                            <div class="form-group mt-4 row">   
+                                {% if data1.img2 == data1.img2 %}
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Image Location 2</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" value="{{data1.img2.url}}" type="text" id="example-text-input" readonly>
+                                    </div>
+                                {% else %}
+                                    <input type="file" name="img2" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label form-control" for="customFile">Room Image 2</label>
+                                {% endif %}
+                            </div>
+                            <div class="form-group mt-4 row">   
+                                {% if data1.img3 == data1.img3 %}
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Image Location 3</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" value="{{data1.img3.url}}" type="text" id="example-text-input" readonly>
+                                    </div>
+                                {% else %}
+                                    <input type="file" name="img3" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label form-control" for="customFile">Room Image 3</label>
+                                {% endif %}
+                            </div>
+                            <div class="form-group mt-4 row">   
+                                {% if data1.img4 == data1.img4 %}
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Image Location 4</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" value="{{data1.img4.url}}" type="text" id="example-text-input" readonly>
+                                    </div>
+                                {% else %}
+                                    <input type="file" name="img4" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label form-control" for="customFile">Room Image 4</label>
+                                {% endif %}
+                            </div>
+                            <div class="form-group mt-4 row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Slogan</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" name="dis" type="text" id="example-text-input" value="{{data1.dis}}" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Status</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="status" id="inlineFormCustomSelect" value="{{data1.status}}" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Disable Date 1</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="date_disable" id="datepicker" placeholder="dd/mm/yyyy" value="{{data1.date_disable}}" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Disable Date 2</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="date_disable1" id="datepicker" placeholder="dd/mm/yyyy" value="{{data1.date_disable1}}" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-month-input" class="col-md-2 col-form-label">Disable Date 3</label>
+                                <div class="col-md-10">
+                                    <input class="custom-select col-12" name="date_disable2" id="datepicker" placeholder="dd/mm/yyyy" value="{{data1.date_disable2}}" >
+                                </div>
+                            </div>
+                            
+                            <center> 
+                                <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success">Success</button>
+                                <button class="btn waves-effect waves-light btn-rounded btn-danger text-white" ><a class="text-white" href="{% url 'srooms' %}"> Cancel</a></button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
